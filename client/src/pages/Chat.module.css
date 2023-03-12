@@ -1,0 +1,14 @@
+.container{
+    width: 100vw;
+    height: 100svh;
+    overflow: hidden;
+    background-color: #BDCDD6;
+    position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+    .container{
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+    }
+}

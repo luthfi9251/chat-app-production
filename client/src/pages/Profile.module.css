@@ -1,0 +1,70 @@
+.picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.picture img {
+    width: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.picture input {
+    display: none;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: white;
+    color: #495758;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.form label {
+    align-self: flex-start;
+}
+
+.form input {
+    width: 100%;
+    display: block;
+    height: 2rem;
+    padding: 0.5rem 0.5rem;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+}
+
+.form input:focus {
+    border: none;
+    outline: none;
+}
+
+.form button {
+    margin-top: 15px;
+    align-self: stretch;
+}
+
+@media only screen and (min-width: 768px) {
+    .picture img {
+        width: 50%;
+    }
+}

@@ -1,0 +1,51 @@
+.containerLeft {
+    background-color: white;
+    max-width: 90%;
+    align-self: flex-end;
+    padding: 1rem 1.3rem;
+    position: relative;
+    border-radius: 15px;
+}
+
+.containerLeft::after {
+    content: "";
+    width: 30px;
+    aspect-ratio: 1;
+    position: absolute;
+    background-color: white;
+    clip-path: polygon(50% 0%, 0 48%, 100% 100%);
+    right: -10px;
+    bottom: -12px;
+}
+
+.containerRight {
+    background-color: #e96479;
+    max-width: 90%;
+    align-self: flex-start;
+    padding: 1rem 1.3rem;
+    position: relative;
+    border-radius: 15px;
+}
+
+.containerRight::after {
+    content: "";
+    width: 30px;
+    aspect-ratio: 1;
+    position: absolute;
+    background-color: #e96479;
+    clip-path: polygon(50% 0%, 100% 48%, 0 100%);
+    left: -10px;
+    bottom: -12px;
+}
+
+.time {
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+
+@media only screen and (min-width: 768px) {
+    .containerLeft,
+    .containerRight {
+        max-width: 50%;
+    }
+}

@@ -1,0 +1,119 @@
+.container{
+    width: 90%;
+    /* background-color: red; */
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100%;
+    gap: 0;
+    transition:all ease-in 0.5s;
+    position: absolute;
+    z-index: 3;
+}
+
+.navbar{
+    padding: 1rem 0;
+    background-color: #364243;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.contactContainer{
+    background-color: #3F4E4F;
+    padding: 1rem 0.5rem;
+    height: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.searchContainer{
+    padding: 0rem 0.5rem;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1.5px solid #1E2525;
+}
+
+.search{
+    height: 2.5rem;
+    width: 100%;
+    outline: none;
+    padding: 0 0.7rem;
+    border-radius: 20px;
+    border: none;
+    background-color: white;
+}
+
+.search::placeholder{
+}
+
+.contactWrapper{
+    height: calc(100% - 45px);
+    overflow-y: scroll;
+}
+
+.linkContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+}
+
+.linkItem{
+    width: 65%;
+    aspect-ratio: 1;
+    background-color: #495758;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.linkItem:hover{
+    background-color: #68797a;
+}
+
+.linkImage{
+    width: 40%;
+    /* height: 100%; */
+    object-fit: contain;
+}
+
+.linkComp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profilePict{
+    border-radius: 50%;
+    width: 90%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border: 2px solid #68797a;
+}
+
+.profilePict img{
+    width: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 768px) {
+    .container{
+        min-width: 350px;
+        width: 100%;
+        max-width:450px;
+        position: static;
+        z-index: 1;
+    }
+
+    .contactWrapper{
+        height: calc(100% - 45px);
+        overflow-y: auto;
+    }
+}

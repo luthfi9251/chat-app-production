@@ -1,0 +1,28 @@
+.container {
+    width: 100vw;
+    height: 100svh;
+    background-color: #bdcdd6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.content {
+    width: 90%;
+    max-width: 500px;
+    background-color: #495758;
+    color: white;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.content h2 {
+    text-align: center;
+}
+
+.link {
+    position: absolute;
+    top: 15px;
+}

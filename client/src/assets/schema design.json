@@ -1,0 +1,33 @@
+{
+  "userSchema": {
+    "_id": "",
+    "authType": "google",
+    "authId": "",
+    "email": "",
+    "Name": "",
+    "username": "",
+    "profilePict":"",
+    "friends": [
+      {
+        "_id":"",
+        "conversationId":"",
+        "accepted": 0,
+        "requestBy": "id",
+        "member": []
+      }
+    ]
+  },
+  "conversationSchema":{
+    "_id": "",
+    "roomId": "",
+    "member": [],
+    "messages": [
+      {
+        "_id": "",
+        "senderId": "",
+        "text": "",
+        "date": ""
+      }
+    ]
+  }
+}

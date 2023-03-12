@@ -1,0 +1,28 @@
+.container {
+    /* background-color: red; */
+    /* height: 60px; */
+    display: grid;
+    align-items: center;
+    grid-template-columns: 20% 70%;
+    grid-template-rows: 50px;
+    padding: 0.5rem;
+    gap: 1rem;
+    border-bottom: 1.5px solid #1E2525;
+    cursor: pointer;
+}
+
+.container img {
+    border-radius: 50%;
+    height: 90%;
+    object-fit: cover;
+}
+
+.container span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+}
+
+.container:hover {
+    background-color: #576B6C;
+}
