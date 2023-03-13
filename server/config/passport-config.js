@@ -1,5 +1,6 @@
 let GoogleStrategy = require('passport-google-oauth20').Strategy;
 let passport = require('passport')
+let os = require('os')
 let User = require('../models/user')
 
 let GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID

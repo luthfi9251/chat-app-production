@@ -33,35 +33,37 @@ app.set('trust proxy', 1)
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
-app.use(
-    session({
-      secret: "this_is_a_secret",
-      resave: false,
-      saveUnitialized: false,
-      cookie: {
-        maxAge: 60 * 60 * 1000,
-        secure: false,
-        sameSite: false 
-      }
-    })
-  );
-// app.use(cookieSession({ 
-//     name: "session", 
-//     keys: ["luthfi"], 
-//     maxAge: 60 * 60 * 1000,
-//     sameSite: 'none',
-//     secure: false,
-//     httpOnly: true
-// }))
+// app.use(
+//     session({
+//       secret: "this_is_a_secret",
+//       resave: false,
+//       saveUnitialized: false,
+//       cookie: {
+//         maxAge: 60 * 60 * 1000,
+//         secure: false,
+//         sameSite: "lax" 
+//       }
+//     })
+//   );
+app.use(cookieSession({ 
+    name: "session", 
+    keys: ["luthfi"], 
+    maxAge: 60 * 60 * 1000,
+    sameSite: 'none',
+    secure: false,
+    httpOnly: true,
+    sameSite: "lax"
+}))
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(cors({
-    origin: "http://localhost:5173",
-    methods: "GET,POST,PUT,DELETE",
-    credentials: true,
-}))
+// app.use(cors({
+//   origin: "http://localhost:5173",
+//   methods: "GET,POST,PUT,DELETE",
+//   credentials: true,
+// }))
 app.use(cookieSessionFix)
 
+app.use(express.static(path.join(__dirname, '../client', 'dist')));
 
 app.use('/auth',authRoutes)
 app.use('/api',authenticate,apiRoutes)
@@ -85,15 +87,14 @@ app.get('/deletealluser',(req,res) => {
 //     console.log("Listening on port: " + PORT)
 // })
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client', 'dist')));
-    app.get('/*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../client', 'dist', 'index.html'));
-    })
-}
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client', 'dist', 'index.html'));
+})
 
 
 app.listen(PORT, ()=> {
+  let os = require('os')
+  console.log(os.hostname())
     console.log("Listening on port: " + PORT)
 })
 
