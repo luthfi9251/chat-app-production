@@ -21,7 +21,7 @@ function insertDatabase(object){
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://chat-app-luthfi.vercel.app/auth/redirect/google" //jangan lupa ganti redirect uri nya
+    callbackURL: "https://chat-app-luthfi-git-master-luthfi9251.vercel.app/auth/redirect/google" //jangan lupa ganti redirect uri nya
   },
   function(accessToken, refreshToken, profile, done) {
     let dataProfile = {
