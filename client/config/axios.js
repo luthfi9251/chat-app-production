@@ -16,10 +16,10 @@ instance.interceptors.response.use(res => {
 }, err => {
     // console.log(err)
     if(err.response.status === 401){
-        //redirect ke login
-        // console.log("error")
-        // history.replace("/");
-        // window.location.href = "/";
+        
+        alert("Your session is expired, please Login")
+        history.replace("/");
+        window.location.href = "/";
     }
 
     return Promise.reject(err)
