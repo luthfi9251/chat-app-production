@@ -37,7 +37,7 @@ export default function Friends() {
                 withCredentials: true,
             })
             .then((res) => {
-                console.log(res.data);
+                // console.log(res.data);
                 setDataPending(res.data.data);
             })
             .catch((err) => {
@@ -54,7 +54,7 @@ export default function Friends() {
             })
             .then((res) => {
                 setDataFriend(res.data.data);
-                console.log(res.data.data);
+                // console.log(res.data.data);
             })
             .catch((err) => {
                 if (err.response.status === 401) {
@@ -80,6 +80,7 @@ export default function Friends() {
     }, [search]);
 
     useEffect(() => {
+        document.title = "ChatApp - Friends";
         axiosInstance
             .get(`/api/getprofile`, {
                 withCredentials: true,

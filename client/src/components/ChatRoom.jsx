@@ -129,7 +129,11 @@ export default function ChatRoom() {
                         className={style.profile}
                         alt="Profil Picture"
                     />
-                    <span>{friendActive.name}</span>
+                    <span>
+                        {friendActive.name.length > 12
+                            ? friendActive.name.slice(0, 12) + "..."
+                            : friendActive.name}
+                    </span>
                 </div>
             </div>
             <div className={style.chat}>
@@ -149,6 +153,9 @@ export default function ChatRoom() {
                     type="text"
                     onChange={(e) => setText(e.target.value)}
                     value={text}
+                    onKeyDown={(e) =>
+                        e.key === "Enter" ? handleSendMessage() : null
+                    }
                 />
                 <button onClick={handleSendMessage}>
                     <img src={sendIcon} alt="" />

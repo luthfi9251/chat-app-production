@@ -5,23 +5,18 @@ let User = require('../models/user')
 
 let GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
 let GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
+let CALLBACK_URI = process.env.ENVIRONMENT === "PRODUCTION" ? "http://ec2-54-253-74-168.ap-southeast-2.compute.amazonaws.com/auth/redirect/google" : "http://localhost:4000/auth/redirect/google"
 
 function createUsername(string){
     let temp = string.toLowerCase().split(" ").join("") + Math.floor(Math.random()*1000)
     return temp
 }
 
-function insertDatabase(object){
-    User.create(obj, (err, data)=>{
-        if(err) return console.log(err)
-        console.log(data)
-    })
-}
 
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://chat-app-luthfi-git-master-luthfi9251.vercel.app/auth/redirect/google" //jangan lupa ganti redirect uri nya
+    callbackURL: CALLBACK_URI //jangan lupa ganti redirect uri nya
   },
   function(accessToken, refreshToken, profile, done) {
     let dataProfile = {
@@ -53,7 +48,7 @@ passport.serializeUser((user,done)=>{
 })
 
 passport.deserializeUser((user,done)=>{
-  console.log("ini deserialize user")
-  console.log(user)
+  // console.log("ini deserialize user")
+  // console.log(user)
   done(null,user)
 })

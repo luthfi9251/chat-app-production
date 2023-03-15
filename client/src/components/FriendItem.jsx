@@ -23,7 +23,7 @@ export default function FriendItem({ mode, data, setter }) {
         axiosInstance
             .post(`/api/addfriend`, dataBody, { withCredentials: true })
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 setUser(res.data.data);
                 setter();
             })
@@ -41,7 +41,7 @@ export default function FriendItem({ mode, data, setter }) {
                 { withCredentials: true }
             )
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 setUser(res.data.data);
                 setter();
             })
@@ -58,7 +58,7 @@ export default function FriendItem({ mode, data, setter }) {
                 { withCredentials: true }
             )
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 setUser(res.data.data);
                 setter();
             })

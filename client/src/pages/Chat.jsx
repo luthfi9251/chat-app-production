@@ -28,6 +28,7 @@ export default function ChatPage() {
     }, [size.width]);
 
     useEffect(() => {
+        document.title = "ChatApp - Dashboard";
         axiosInstance
             .get(`/api/getprofile`, {
                 withCredentials: true,

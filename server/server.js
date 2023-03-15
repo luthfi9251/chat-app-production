@@ -56,13 +56,12 @@ app.use(cookieSession({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
-// app.use(cors({
-//   origin: "http://localhost:5173",
-//   methods: "GET,POST,PUT,DELETE",
-//   credentials: true,
-// }))
+app.use(cors({
+  origin: "http://localhost:5173",
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true,
+}))
 app.use(cookieSessionFix)
-
 app.use(express.static(path.join(__dirname, '../client', 'dist')));
 
 app.use('/auth',authRoutes)
@@ -87,14 +86,16 @@ app.get('/deletealluser',(req,res) => {
 //     console.log("Listening on port: " + PORT)
 // })
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client', 'dist', 'index.html'));
-})
+if(process.env.ENVIRONMENT === "PRODUCTION"){
+    app.get('/*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../client', 'dist', 'index.html'));
+    })
+}
 
 
 app.listen(PORT, ()=> {
-  let os = require('os')
-  console.log(os.hostname())
+    let os = require('os')
+//   console.log(os.hostname())
     console.log("Listening on port: " + PORT)
 })
 

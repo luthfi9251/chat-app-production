@@ -69,8 +69,14 @@ export default function Sidebar() {
     }, []);
 
     useEffect(() => {
-        // console.log(axiosInstance);
-        getFriend();
+        if (search === "") {
+            getFriend();
+            return;
+        }
+        let filtered = friend.filter((item) =>
+            item.name.toLowerCase().includes(search)
+        );
+        setFriend(filtered);
     }, [search]);
 
     return (

@@ -1,5 +1,5 @@
 import style from "./Login.module.css";
-import { useState } from "react";
+import { useEffect } from "react";
 import config from "../../config.json";
 
 import googleIcon from "../assets/google-icon.png";
@@ -10,6 +10,10 @@ export default function Login() {
     let handleClick = () => {
         window.open(`${BASE_URL}/auth/google`, "_self");
     };
+
+    useEffect(() => {
+        document.title = "ChatApp - Login";
+    }, []);
 
     return (
         <div className={style.container}>

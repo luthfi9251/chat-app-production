@@ -63,9 +63,9 @@ export default function Profile() {
         // console.log(body);
     };
 
-    // useEffect(() => {
-    //     console.log(image);
-    // }, [image]);
+    useEffect(() => {
+        document.title = "ChatApp - Profile";
+    }, []);
 
     return (
         <PageLayout>
