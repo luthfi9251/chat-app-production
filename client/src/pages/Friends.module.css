@@ -1,6 +1,7 @@
 .container{
     width: 100vw;
     height: 100svh;
+    min-height: 800px;
     background-color: #BDCDD6;
     display: flex;
     justify-content: center;

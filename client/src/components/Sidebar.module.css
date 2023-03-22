@@ -2,6 +2,7 @@
     width: 90%;
     /* background-color: red; */
     height: 100vh;
+    min-height: 800px;
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 3fr;
