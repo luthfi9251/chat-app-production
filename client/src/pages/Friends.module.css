@@ -1,15 +1,15 @@
-.container{
+.container {
     width: 100vw;
     height: 100svh;
-    min-height: 800px;
-    background-color: #BDCDD6;
+    min-height: 600px;
+    background-color: #bdcdd6;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 
-.content{
+.content {
     width: 90%;
     max-width: 500px;
     background-color: #495758;
@@ -18,29 +18,29 @@
     border-radius: 10px;
 }
 
-.content h2{
+.content h2 {
     text-align: center;
 }
 
-.buttonWrapper{
+.buttonWrapper {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.buttonWrapper > button{
+.buttonWrapper > button {
     width: 100%;
     height: 2.5rem;
-    background-color: #36433C;
+    background-color: #36433c;
     color: white;
     border: none;
-    transition: all ease-in-out 0.5s
+    transition: all ease-in-out 0.5s;
 }
 
-.buttonWrapper .buttonActive{
+.buttonWrapper .buttonActive {
     background-color: #54d0db;
 }
 
-.list{
+.list {
     width: 100%;
     min-height: 300px;
     height: 60vh;
@@ -48,7 +48,7 @@
     overflow-y: auto;
 }
 
-.list input{
+.list input {
     width: 100%;
     height: 2.5rem;
     border-radius: 10px;
@@ -57,7 +57,7 @@
     margin: 0.4rem 0;
 }
 
-.list input:focus{
+.list input:focus {
     outline: none;
     border: none;
 }

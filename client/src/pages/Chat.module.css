@@ -1,14 +1,14 @@
-.container{
+.container {
     width: 100vw;
     height: 100svh;
-    min-height: 800px;
+    min-height: 600px;
     overflow: hidden;
-    background-color: #BDCDD6;
+    background-color: #bdcdd6;
     position: relative;
 }
 
 @media only screen and (min-width: 768px) {
-    .container{
+    .container {
         display: grid;
         grid-template-columns: 2fr 5fr;
     }
